@@ -1,7 +1,7 @@
 model_list:
   - model_name: claude-opus-4-8
     litellm_params:
-      model: "ollama_chat/laguna-xs-2.1:q8_0"
+      model: "ollama_chat/qwen3.6:27b"
       api_key: "ollama"
       api_base: "http://192.168.80.1:11434"
       num_ctx: 32768
@@ -9,7 +9,7 @@ model_list:
 
   - model_name: claude-sonnet-4-6
     litellm_params:
-      model: "ollama_chat/laguna-xs-2.1:q8_0"
+      model: "ollama_chat/qwen3.6:27b"
       api_key: "ollama"
       api_base: "http://192.168.80.1:11434"
       num_ctx: 32768
@@ -17,7 +17,7 @@ model_list:
 
   - model_name: claude-haiku-4-5-20251001
     litellm_params:
-      model: "ollama_chat/laguna-xs-2.1:q8_0"
+      model: "ollama_chat/qwen3.6:27b"
       api_key: "ollama"
       api_base: "http://192.168.80.1:11434"
       num_ctx: 32768
