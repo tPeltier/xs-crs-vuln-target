@@ -9,7 +9,7 @@ llm_config:
   litellm:
     mode: internal
     internal:
-      config_path: example/vuln-target/litellm-config.yaml
+      config_path: litellm-config.yaml
 
 crs-bug-finding-template:
   cpuset: "2-7"
