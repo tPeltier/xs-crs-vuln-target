@@ -1,0 +1,19 @@
+##############################################################################
+#                        CRS Compose Configuration                           #
+#              vuln-target: crs-libfuzzer (llmless, bug-finding)             #
+##############################################################################
+
+# --- General Settings -------------------------------------------------------
+run_env: local
+docker_registry: local
+
+# --- Infrastructure ---------------------------------------------------------
+oss_crs_infra:
+  cpuset: "0-1"
+  memory: "8G"
+
+# --- CRS (crs-libfuzzer) -----------------------------------------------------
+# Pure fuzzer — no LLM, no LLM budget, no builder sidecar needed.
+crs-libfuzzer:
+  cpuset: "2-7"
+  memory: "16G"

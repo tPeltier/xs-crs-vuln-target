@@ -1,0 +1,31 @@
+##############################################################################
+#                        CRS Compose Configuration                           #
+#         vuln-target: crs-claude-code (LLM bug-patching/bug-fixing)         #
+##############################################################################
+
+# --- General Settings -------------------------------------------------------
+run_env: local
+docker_registry: local
+
+# --- Infrastructure ---------------------------------------------------------
+oss_crs_infra:
+  cpuset: "0-1"
+  memory: "8G"
+
+# --- CRS (crs-claude-code) ---------------------------------------------------
+# Builder sidecars are declared in crs.yaml (snapshot: true / run_snapshot: true)
+# and handled automatically by the framework — no separate entry needed.
+crs-claude-code:
+  cpuset: "2-7"
+  memory: "16G"
+  llm_budget: 10
+  additional_env:
+    CRS_AGENT: claude_code
+    ANTHROPIC_MODEL: claude-opus-4-8
+
+# --- LLM Configuration -----------------------------------------------------
+llm_config:
+  litellm:
+    mode: internal
+    internal:
+      config_path: ~/xs-crs-vuln-target/crs-claude-code/litellm-config.yaml
